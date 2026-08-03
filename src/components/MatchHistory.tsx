@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import type { Match } from '../types/match';
+import React, { useMemo, useState } from 'react';
+import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
+import type { Lane, Match } from '../types/match';
 import { kda } from '../lib/stats';
 import { notaColor, tagColor } from '../lib/badges';
 
@@ -9,28 +9,57 @@ interface Props {
 }
 
 const PAGE_SIZE = 20;
+const LANES: Lane[] = ['Topo', 'Selva', 'Meio', 'Atirador', 'Suporte'];
 
 function formatDate(d: string) {
   const [y, m, day] = d.split('-');
   return `${day}/${m}/${y}`;
 }
 
+type ResultadoFiltro = 'todos' | 'vitoria' | 'derrota';
+
 export default function MatchHistory({ matches }: Props) {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [page, setPage] = useState(1);
+  const [busca, setBusca] = useState('');
+  const [filtroResultado, setFiltroResultado] = useState<ResultadoFiltro>('todos');
+  const [filtroLane, setFiltroLane] = useState<Lane | 'todas'>('todas');
+  const [filtroCampeao, setFiltroCampeao] = useState<string>('todos');
 
-const sorted = useMemo(
-  () =>
-    matches
-      .map((m, i) => ({ m, i }))
-      .sort((a, b) => b.m.data.localeCompare(a.m.data) || b.i - a.i)
-      .map(({ m }) => m),
-  [matches],
-);
+  const campeoesDisponiveis = useMemo(
+    () => Array.from(new Set(matches.map((m) => m.campeao))).sort((a, b) => a.localeCompare(b)),
+    [matches],
+  );
 
-  const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+  const sorted = useMemo(
+    () =>
+      matches
+        .map((m, i) => ({ m, i }))
+        .sort((a, b) => b.m.data.localeCompare(a.m.data) || b.i - a.i)
+        .map(({ m }) => m),
+    [matches],
+  );
+
+  const filtered = useMemo(() => {
+    const termo = busca.trim().toLowerCase();
+    return sorted.filter((m) => {
+      if (filtroResultado !== 'todos' && m.resultado !== filtroResultado) return false;
+      if (filtroLane !== 'todas' && m.lane !== filtroLane) return false;
+      if (filtroCampeao !== 'todos' && m.campeao !== filtroCampeao) return false;
+      if (!termo) return true;
+      const alvo = [m.campeao, m.observacoes ?? '', m.nota ?? '', ...(m.tags ?? [])]
+        .join(' ')
+        .toLowerCase();
+      return alvo.includes(termo);
+    });
+  }, [sorted, busca, filtroResultado, filtroLane, filtroCampeao]);
+
+  const filtrosAtivos =
+    busca.trim() !== '' || filtroResultado !== 'todos' || filtroLane !== 'todas' || filtroCampeao !== 'todos';
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
-  const pageMatches = sorted.slice(
+  const pageMatches = filtered.slice(
     (currentPage - 1) * PAGE_SIZE,
     currentPage * PAGE_SIZE,
   );
@@ -42,14 +71,89 @@ const sorted = useMemo(
     document.getElementById('partidas')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  function updateFilter<T>(setter: (v: T) => void) {
+    return (v: T) => {
+      setter(v);
+      setPage(1);
+      setExpanded(null);
+    };
+  }
+
+  function limparFiltros() {
+    setBusca('');
+    setFiltroResultado('todos');
+    setFiltroLane('todas');
+    setFiltroCampeao('todos');
+    setPage(1);
+    setExpanded(null);
+  }
+
+  const selectClass =
+    'appearance-none bg-mist-50 dark:bg-ink-900 border border-mist-300 dark:border-ink-800 rounded-full pl-3 pr-7 py-1.5 text-xs text-ink-700 dark:text-mist-200 hover:border-brand/40 transition-colors cursor-pointer focus:outline-none focus:border-brand/50';
+
   return (
     <section id="partidas" className="max-w-6xl mx-auto px-5 sm:px-8 py-16">
-      <div className="flex items-baseline justify-between mb-8">
+      <div className="flex items-baseline justify-between mb-6">
         <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight">Histórico de partidas</h2>
         <p className="text-sm text-ink-500 dark:text-mist-400">
-          {matches.length} registradas
+          {filtrosAtivos ? `${filtered.length} de ${matches.length}` : `${matches.length} registradas`}
           {totalPages > 1 && ` · página ${currentPage} de ${totalPages}`}
         </p>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2.5 mb-5">
+        <div className="relative flex-1 min-w-[180px]">
+          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-500 dark:text-mist-400" />
+          <input
+            type="text"
+            value={busca}
+            onChange={(e) => updateFilter(setBusca)(e.target.value)}
+            placeholder="Buscar campeão, tag, observação..."
+            className="w-full bg-mist-50 dark:bg-ink-900 border border-mist-300 dark:border-ink-800 rounded-full pl-8 pr-3 py-1.5 text-xs placeholder:text-ink-500 dark:placeholder:text-mist-400 hover:border-brand/40 focus:outline-none focus:border-brand/50 transition-colors"
+          />
+        </div>
+
+        <select
+          value={filtroResultado}
+          onChange={(e) => updateFilter(setFiltroResultado)(e.target.value as ResultadoFiltro)}
+          className={selectClass}
+        >
+          <option value="todos">Resultado: todos</option>
+          <option value="vitoria">Vitórias</option>
+          <option value="derrota">Derrotas</option>
+        </select>
+
+        <select
+          value={filtroLane}
+          onChange={(e) => updateFilter(setFiltroLane)(e.target.value as Lane | 'todas')}
+          className={selectClass}
+        >
+          <option value="todas">Lane: todas</option>
+          {LANES.map((lane) => (
+            <option key={lane} value={lane}>{lane}</option>
+          ))}
+        </select>
+
+        <select
+          value={filtroCampeao}
+          onChange={(e) => updateFilter(setFiltroCampeao)(e.target.value)}
+          className={selectClass}
+        >
+          <option value="todos">Campeão: todos</option>
+          {campeoesDisponiveis.map((c) => (
+            <option key={c} value={c}>{c}</option>
+          ))}
+        </select>
+
+        {filtrosAtivos && (
+          <button
+            onClick={limparFiltros}
+            className="inline-flex items-center gap-1 text-xs text-ink-500 dark:text-mist-400 hover:text-loss transition-colors px-2 py-1.5"
+          >
+            <X size={13} />
+            Limpar
+          </button>
+        )}
       </div>
 
       <div className="border border-mist-300 dark:border-ink-800 rounded-xl2 overflow-hidden">
@@ -69,6 +173,13 @@ const sorted = useMemo(
               </tr>
             </thead>
             <tbody>
+              {pageMatches.length === 0 && (
+                <tr>
+                  <td colSpan={9} className="px-4 py-10 text-center text-sm text-ink-500 dark:text-mist-400">
+                    Nenhuma partida encontrada com esses filtros.
+                  </td>
+                </tr>
+              )}
               {pageMatches.map((m) => {
                 const win = m.resultado === 'vitoria';
                 const isOpen = expanded === m.id;
@@ -125,7 +236,7 @@ const sorted = useMemo(
                     {isOpen && (
                       <tr className="bg-mist-200/40 dark:bg-ink-850/40 border-t border-mist-300 dark:border-ink-800">
                         <td colSpan={9} className="px-4 py-4">
-                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
                             <div>
                               <p className="text-ink-500 dark:text-mist-400 mb-1">Dano causado</p>
                               <p className="font-mono font-medium">{m.danoCausado.toLocaleString('pt-BR')}</p>
@@ -143,7 +254,7 @@ const sorted = useMemo(
                                 {m.tags.map((tag) => (
                                   <span
                                     key={tag}
-                                    className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium ${tagColor(tag).bg} ${tagColor(tag).text}`}
+                                    className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${tagColor(tag).bg} ${tagColor(tag).text}`}
                                   >
                                     {tag}
                                   </span>
@@ -172,7 +283,7 @@ const sorted = useMemo(
         <div className="flex items-center justify-between mt-5">
           <p className="text-xs text-ink-500 dark:text-mist-400">
             Mostrando {(currentPage - 1) * PAGE_SIZE + 1}–
-            {Math.min(currentPage * PAGE_SIZE, sorted.length)} de {sorted.length}
+            {Math.min(currentPage * PAGE_SIZE, filtered.length)} de {filtered.length}
           </p>
 
           <div className="flex items-center gap-1.5">
