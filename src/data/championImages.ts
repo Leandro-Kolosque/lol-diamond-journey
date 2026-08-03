@@ -9,6 +9,7 @@ export const championImages: Record<string, string> = {
   // Ezreal: '/champions/ezreal.jpg',
   Aphelios: '/champions/aphelios.jpg',
   Caitlyn: '/champions/caitlyn.jpg',
+  Draven: '/champions/draven.jpg',
   Sivir: '/champions/sivir.jpg',
   Smolder: '/champions/smolder.jpg',
   Varus: '/champions/varus.jpg',

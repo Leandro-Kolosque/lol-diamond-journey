@@ -161,7 +161,7 @@ export const matches: Match[] = [
     danoRecebido: 17299,
     participacaoAbates: 0.45,      // 0 a 1
     rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
-    divisao: 1,
+    divisao: 4,
     lpAntes: 31,
     lpDelta: +18,
     nota: 'MVP',                   // opcional: 'S+', 'MVP', 'ACE'

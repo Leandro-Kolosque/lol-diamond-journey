@@ -85,28 +85,65 @@ export function bestChampion(list: Match[]): ChampionAgg | undefined {
   return [...champs].sort((a, b) => b.winRate - a.winRate)[0];
 }
 
-export function rankProgress(current: Rank, goal: Rank): number {
-  const curIdx = RANK_ORDER.indexOf(current);
-  const goalIdx = RANK_ORDER.indexOf(goal);
-  if (goalIdx <= 0) return 100;
-  return Math.max(0, Math.min(100, (curIdx / goalIdx) * 100));
+// Elos que têm divisão (IV a I). A partir de Mestre não existe mais divisão,
+// o ranqueamento passa a ser só por LP.
+const DIVISIONED_RANKS = new Set<Rank>([
+  'Ferro', 'Bronze', 'Prata', 'Ouro', 'Platina', 'Esmeralda', 'Diamante',
+]);
+
+// Converte elo + divisão + LP numa régua contínua, pra dar pra comparar
+// duas posições (início da jornada vs agora vs objetivo) de forma justa.
+// Cada elo vale 4 unidades (uma por divisão); dentro da divisão, o LP
+// (0 a 100) preenche a unidade proporcionalmente.
+function tierValue(rank: Rank, divisao: number | undefined, lp: number): number {
+  const idx = RANK_ORDER.indexOf(rank);
+  const clampedLp = Math.max(0, Math.min(100, lp));
+  if (!DIVISIONED_RANKS.has(rank)) {
+    // Mestre+ : sem divisão, aproxima só pelo LP acumulado ali dentro.
+    return idx * 4 + Math.min(clampedLp, 100) / 100;
+  }
+  const div = divisao ?? 4;
+  return idx * 4 + (4 - div) + clampedLp / 100;
 }
 
-export function cumulativeLp(list: Match[]) {
+export function rankProgress(
+  startRank: Rank,
+  startDivisao: number | undefined,
+  currentRank: Rank,
+  currentDivisao: number | undefined,
+  currentLp: number,
+  goalRank: Rank,
+): number {
+  const start = tierValue(startRank, startDivisao, 0);
+  const current = tierValue(currentRank, currentDivisao, currentLp);
+  const goal = tierValue(goalRank, 4, 0); // "chegar" no objetivo = entrar nele
+  if (goal <= start) return 100;
+  return Math.max(0, Math.min(100, ((current - start) / (goal - start)) * 100));
+}
+
+// LP real após cada partida (lpAntes + lpDelta), na ordem sequencial real do
+// array — não recalcula por soma acumulada, então promoções que resetam o LP
+// não bagunçam a conta. `idx` é a posição sequencial (1ª, 2ª, 3ª partida...),
+// usada como eixo X nos gráficos pra não sobrepor partidas do mesmo dia.
+export function lpTimeline(list: Match[]) {
   const sorted = [...list].sort((a, b) => a.data.localeCompare(b.data));
-  let acc = 0;
-  return sorted.map((m) => {
-    acc += m.lpDelta;
-    return { data: m.data, lp: acc, rank: m.rank, resultado: m.resultado };
-  });
+  return sorted.map((m, i) => ({
+    idx: i + 1,
+    data: m.data,
+    lp: m.lpAntes + m.lpDelta,
+    rank: m.rank,
+    divisao: m.divisao,
+    resultado: m.resultado,
+  }));
 }
 
 export function rollingWinRate(list: Match[], window = 5) {
   const sorted = [...list].sort((a, b) => a.data.localeCompare(b.data));
-  return sorted.map((_, idx) => {
+  return sorted.map((m, idx) => {
     const slice = sorted.slice(Math.max(0, idx - window + 1), idx + 1);
     return {
-      data: sorted[idx].data,
+      idx: idx + 1,
+      data: m.data,
       winRate: Math.round(winRate(slice) * 10) / 10,
     };
   });
@@ -114,7 +151,8 @@ export function rollingWinRate(list: Match[], window = 5) {
 
 export function kdaSeries(list: Match[]) {
   const sorted = [...list].sort((a, b) => a.data.localeCompare(b.data));
-  return sorted.map((m) => ({
+  return sorted.map((m, idx) => ({
+    idx: idx + 1,
     data: m.data,
     kda: Math.round(kda(m) * 100) / 100,
   }));
@@ -171,4 +209,42 @@ export function championsByLaneStats(list: Match[]): Record<Lane, ChampionLaneAg
   }
 
   return result;
+}
+
+export interface RankDivisionAgg {
+  label: string;
+  rank: Rank;
+  divisao?: number;
+  partidas: number;
+}
+
+const ROMAN: Record<number, string> = { 1: 'I', 2: 'II', 3: 'III', 4: 'IV' };
+
+// Agrupa partidas por elo + divisão (ex: "Esmeralda IV", "Esmeralda III"),
+// não só por elo — assim a distribuição real do grind aparece mesmo quando
+// você passa a jornada inteira dentro de um único elo.
+export function matchesByRankDivision(list: Match[]): RankDivisionAgg[] {
+  const map = new Map<string, { rank: Rank; divisao?: number; count: number }>();
+  for (const m of list) {
+    const key = `${m.rank}|${m.divisao ?? ''}`;
+    const cur = map.get(key) ?? { rank: m.rank, divisao: m.divisao, count: 0 };
+    cur.count++;
+    map.set(key, cur);
+  }
+
+  const arr: RankDivisionAgg[] = Array.from(map.values()).map((v) => ({
+    label: v.divisao ? `${v.rank} ${ROMAN[v.divisao] ?? v.divisao}` : v.rank,
+    rank: v.rank,
+    divisao: v.divisao,
+    partidas: v.count,
+  }));
+
+  arr.sort((a, b) => {
+    const ai = RANK_ORDER.indexOf(a.rank);
+    const bi = RANK_ORDER.indexOf(b.rank);
+    if (ai !== bi) return ai - bi;
+    return (b.divisao ?? 0) - (a.divisao ?? 0); // IV antes de III antes de II antes de I
+  });
+
+  return arr;
 }

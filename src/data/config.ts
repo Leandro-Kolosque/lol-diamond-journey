@@ -5,6 +5,7 @@ export const journeyConfig: JourneyConfig = {
   nomeJogador: 'SnoW',
   objetivoRank: 'Diamante',
   rankInicial: 'Esmeralda',
+  rankInicialDivisao: 4,
   dataInicio: '2026-06-15',
   tituloHero: 'Do Ban ao Diamante',
   descricaoHero:

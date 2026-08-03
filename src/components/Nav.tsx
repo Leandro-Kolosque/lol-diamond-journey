@@ -11,7 +11,6 @@ const links = [
   { href: '#dashboard', label: 'Painel' },
   { href: '#evolucao', label: 'Evolução' },
   { href: '#partidas', label: 'Partidas' },
-  { href: '#campeoes', label: 'Campeões' },
   { href: '#campeoes-por-rota', label: 'Por rota' },
   { href: '#timeline', label: 'Jornada' },
 ];

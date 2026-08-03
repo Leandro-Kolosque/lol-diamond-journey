@@ -54,6 +54,7 @@ export interface JourneyConfig {
   nomeJogador: string;
   objetivoRank: Rank;
   rankInicial: Rank;
+  rankInicialDivisao?: 1 | 2 | 3 | 4;
   dataInicio: string;
   tituloHero: string;
   descricaoHero: string;

@@ -5,7 +5,11 @@ import type { Rank } from '../types/match';
 interface Props {
   titulo: string;
   descricao: string;
+  rankInicial: Rank;
+  rankInicialDivisao?: 1 | 2 | 3 | 4;
   rankAtual: Rank;
+  divisaoAtual?: 1 | 2 | 3 | 4;
+  lpAtual: number;
   objetivo: Rank;
   totalPartidas: number;
   diasDeJornada: number;
@@ -14,12 +18,23 @@ interface Props {
 export default function Hero({
   titulo,
   descricao,
+  rankInicial,
+  rankInicialDivisao,
   rankAtual,
+  divisaoAtual,
+  lpAtual,
   objetivo,
   totalPartidas,
   diasDeJornada,
 }: Props) {
-  const progress = rankProgress(rankAtual, objetivo);
+  const progress = rankProgress(
+    rankInicial,
+    rankInicialDivisao,
+    rankAtual,
+    divisaoAtual,
+    lpAtual,
+    objetivo,
+  );
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -46,6 +61,7 @@ export default function Hero({
               >
                 Ver todas as partidas
               </a>
+
               <a
                 href="#timeline"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium border border-mist-300 dark:border-ink-700 hover:border-brand/50 transition-colors"
@@ -56,20 +72,34 @@ export default function Hero({
 
             <div className="mt-10 flex items-center gap-8 text-sm">
               <div>
-                <p className="font-mono text-xl font-semibold tabular-nums">{totalPartidas}</p>
-                <p className="text-ink-500 dark:text-mist-400 text-xs mt-0.5">partidas registradas</p>
+                <p className="font-mono text-xl font-semibold tabular-nums">
+                  {totalPartidas}
+                </p>
+                <p className="text-ink-500 dark:text-mist-400 text-xs mt-0.5">
+                  partidas registradas
+                </p>
               </div>
+
               <div className="w-px h-9 bg-mist-300 dark:bg-ink-700" />
+
               <div>
-                <p className="font-mono text-xl font-semibold tabular-nums">{diasDeJornada}</p>
-                <p className="text-ink-500 dark:text-mist-400 text-xs mt-0.5">dias de grind</p>
+                <p className="font-mono text-xl font-semibold tabular-nums">
+                  {diasDeJornada}
+                </p>
+                <p className="text-ink-500 dark:text-mist-400 text-xs mt-0.5">
+                  dias de grind
+                </p>
               </div>
             </div>
           </div>
 
           <div className="flex justify-center md:justify-end animate-floatSlow">
             <div className="bg-mist-50 dark:bg-ink-900 border border-mist-300 dark:border-ink-800 rounded-xl2 p-8 shadow-card dark:shadow-card-dark">
-              <DiamondProgress progress={progress} rankAtual={rankAtual} objetivo={objetivo} />
+              <DiamondProgress
+                progress={progress}
+                rankAtual={rankAtual}
+                objetivo={objetivo}
+              />
             </div>
           </div>
         </div>

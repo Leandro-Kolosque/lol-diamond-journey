@@ -3,23 +3,23 @@ import Hero from './components/Hero';
 import Dashboard from './components/Dashboard';
 import EvolutionCharts from './components/EvolutionCharts';
 import MatchHistory from './components/MatchHistory';
-import ChampionCards from './components/ChampionCards';
 import ChampionsByLane from './components/ChampionsByLane';
 import Timeline from './components/Timeline';
 import { useTheme } from './lib/useTheme';
 import { matches } from './data/matches';
 import { milestones } from './data/milestones';
 import { journeyConfig } from './data/config';
-import { cumulativeLp } from './lib/stats';
+import { lpTimeline } from './lib/stats';
 
 function App() {
   const { theme, toggle } = useTheme();
 
   const sorted = [...matches].sort((a, b) => a.data.localeCompare(b.data));
   const lastMatch = sorted[sorted.length - 1];
-  const lpSeries = cumulativeLp(matches);
+  const lpSeries = lpTimeline(matches);
   const lpAtual = lpSeries.length ? lpSeries[lpSeries.length - 1].lp : 0;
   const rankAtual = lastMatch?.rank ?? journeyConfig.rankInicial;
+  const divisaoAtual = lastMatch?.divisao;
 
   const diasDeJornada = sorted.length
     ? Math.max(
@@ -40,7 +40,11 @@ function App() {
         <Hero
           titulo={journeyConfig.tituloHero}
           descricao={journeyConfig.descricaoHero}
+          rankInicial={journeyConfig.rankInicial}
+          rankInicialDivisao={journeyConfig.rankInicialDivisao}
           rankAtual={rankAtual}
+          divisaoAtual={divisaoAtual}
+          lpAtual={lpAtual}
           objetivo={journeyConfig.objetivoRank}
           totalPartidas={matches.length}
           diasDeJornada={diasDeJornada}
@@ -48,7 +52,6 @@ function App() {
         <Dashboard matches={matches} rankAtual={rankAtual} lpAtual={lpAtual} />
         <EvolutionCharts matches={matches} />
         <MatchHistory matches={matches} />
-        <ChampionCards matches={matches} />
         <ChampionsByLane matches={matches} />
         <Timeline milestones={milestones} />
       </main>
