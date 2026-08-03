@@ -348,4 +348,44 @@ export const matches: Match[] = [
     tags: ['ACE','Queda', 'Double Kill'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
     observacoes: 'Sequência sensacional',            // opcional
   },
+    {
+    id: 'm018',
+    data: '2026-08-03',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: 'Xayah',
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 14, deaths: 8, assists: 14,
+    duracaoMinutos: 49,
+    cs: 402,
+    danoCausado: 70.909,
+    danoRecebido: 40.724,
+    participacaoAbates: 0.51,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 54,
+    lpDelta: -11,
+    nota: 'ACE',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['ACE','Médio', 'Double Kill'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: '',            // opcional
+  },
+    {
+    id: 'm019',
+    data: '2026-08-03',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Draven',
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 16, deaths: 3, assists: 3,
+    duracaoMinutos: 24,
+    cs: 198,
+    danoCausado: 28.397,
+    danoRecebido: 12.270,
+    participacaoAbates: 0.44,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 43,
+    lpDelta: +18,
+    nota: 'MVP',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['MVP','Imparável', 'Double Kill'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'DRAVENNNN',            // opcional
+  },
 ];
