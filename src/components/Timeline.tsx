@@ -1,5 +1,6 @@
 import type { JourneyMilestone } from '../types/match';
-import { Flag, TrendingUp, Flame, Target, Star } from 'lucide-react';
+import { Flag, Award, TrendingDown, TrendingUp, RollerCoaster, Target, Star } from 'lucide-react';
+
 
 interface Props {
   milestones: JourneyMilestone[];
@@ -7,8 +8,10 @@ interface Props {
 
 const icons = {
   inicio: Flag,
-  promocao: TrendingUp,
-  sequencia: Flame,
+  promocao: Award,
+  sequencia_vitorias: TrendingUp,
+  sequencia_derrotas: TrendingDown,
+  montanha_russa: RollerCoaster,
   objetivo: Target,
   marco: Star,
 };
