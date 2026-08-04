@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Dashboard from './components/Dashboard';
@@ -9,7 +11,8 @@ import { useTheme } from './lib/useTheme';
 import { matches } from './data/matches';
 import { milestones } from './data/milestones';
 import { journeyConfig } from './data/config';
-import { lpTimeline } from './lib/stats';
+import { lpTimeline, winRate } from './lib/stats';
+import { printConsoleEasterEgg } from './lib/consoleEasterEgg';
 
 function App() {
   const { theme, toggle } = useTheme();
@@ -23,14 +26,25 @@ function App() {
 
   const diasDeJornada = sorted.length
     ? Math.max(
-        1,
-        Math.round(
-          (new Date(sorted[sorted.length - 1].data).getTime() -
-            new Date(journeyConfig.dataInicio).getTime()) /
-            86400000,
-        ),
-      )
+      1,
+      Math.round(
+        (new Date(sorted[sorted.length - 1].data).getTime() -
+          new Date(journeyConfig.dataInicio).getTime()) /
+        86400000,
+      ),
+    )
     : 0;
+
+  useEffect(() => {
+    printConsoleEasterEgg({
+      rankAtual,
+      divisaoAtual,
+      lpAtual,
+      winRatePct: winRate(matches),
+      totalPartidas: matches.length,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="min-h-screen">
