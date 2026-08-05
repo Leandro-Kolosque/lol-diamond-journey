@@ -13,6 +13,9 @@ export const championImages: Record<string, string> = {
   Sivir: '/champions/sivir.jpg',
   Smolder: '/champions/smolder.jpg',
   Varus: '/champions/varus.jpg',
+  "Vel'Koz": '/champions/velkoz.jpg',
   Veigar: '/champions/veigar.jpg',
   Xayah: '/champions/xayah.jpg',
+  Xerath: '/champions/xerath.jpg',
+  Zilean: '/champions/zilean.jpg',
 };

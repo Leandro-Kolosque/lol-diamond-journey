@@ -452,7 +452,7 @@ export const matches: Match[] = [
     id: 'm023',
     data: '2026-08-04',
     resultado: 'vitoria',       // 'vitoria' | 'derrota'
-    campeao: 'Vel Koz',
+    campeao: "Vel'Koz",
     lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
     kills: 7, deaths: 1, assists: 17,
     duracaoMinutos: 24,
@@ -466,13 +466,13 @@ export const matches: Match[] = [
     lpDelta: +19,
     nota: 'MVP',                   // opcional: 'S+', 'MVP', 'ACE'
     tags: ['MVP','Imparável'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
-    observacoes: 'Uma boa atuação de Vel Koz',            // opcional
+    observacoes: "Uma boa atuação de Vel'Koz",            // opcional
   },
     {
     id: 'm024',
     data: '2026-08-04',
     resultado: 'vitoria',       // 'vitoria' | 'derrota'
-    campeao: 'Vel Koz',
+    campeao: "Vel'Koz",
     lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
     kills: 3, deaths: 2, assists: 8,
     duracaoMinutos: 27,
