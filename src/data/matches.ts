@@ -388,4 +388,164 @@ export const matches: Match[] = [
     tags: ['MVP','Imparável', 'Double Kill'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
     observacoes: 'DRAVENNNN',            // opcional
   },
+    {
+    id: 'm020',
+    data: '2026-08-04',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Xayah',
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 4, deaths: 5, assists: 19,
+    duracaoMinutos: 32,
+    cs: 258,
+    danoCausado: 26.811,
+    danoRecebido: 21.367,
+    participacaoAbates: 0.57,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 61,
+    lpDelta: +18,
+    nota: '3rd',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Atrasado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Senti que meu npivel caiu nesse dia',            // opcional
+  },
+    {
+    id: 'm021',
+    data: '2026-08-04',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: 'Draven',
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 6, deaths: 11, assists: 10,
+    duracaoMinutos: 32,
+    cs: 226,
+    danoCausado: 19.540,
+    danoRecebido: 24.483,
+    participacaoAbates: 0.43,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 79,
+    lpDelta: -22,
+    nota: '8th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Triple Kill', 'Inflexível'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Minha pior partida da season até o momento',            // opcional
+  },
+    {
+    id: 'm022',
+    data: '2026-08-04',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: 'Xerath',
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 4, deaths: 10, assists: 18,
+    duracaoMinutos: 38,
+    cs: 52,
+    danoCausado: 31.050,
+    danoRecebido: 28.329,
+    participacaoAbates: 0.50,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 57,
+    lpDelta: -22,
+    nota: '6th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Montanha Russa'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Devido ao meu desempenho abaixo no dia decidi jogar suporte',            // opcional
+  },
+    {
+    id: 'm023',
+    data: '2026-08-04',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Vel Koz',
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 7, deaths: 1, assists: 17,
+    duracaoMinutos: 24,
+    cs: 46,
+    danoCausado: 19.628,
+    danoRecebido: 9.591,
+    participacaoAbates: 0.73,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 35,
+    lpDelta: +19,
+    nota: 'MVP',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['MVP','Imparável'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Uma boa atuação de Vel Koz',            // opcional
+  },
+    {
+    id: 'm024',
+    data: '2026-08-04',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Vel Koz',
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 3, deaths: 2, assists: 8,
+    duracaoMinutos: 27,
+    cs: 46,
+    danoCausado: 18.880,
+    danoRecebido: 13.162,
+    participacaoAbates: 0.32,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 54,
+    lpDelta: +19,
+    nota: '5th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Atrasado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: '',            // opcional
+  },
+    {
+    id: 'm025',
+    data: '2026-08-04',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Zilean',
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 1, deaths: 3, assists: 13,
+    duracaoMinutos: 28,
+    cs: 37,
+    danoCausado: 7.660,
+    danoRecebido: 15.305,
+    participacaoAbates: 0.40,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 73,
+    lpDelta: +18,
+    nota: '6th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Resiliente'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: '',            // opcional
+  },
+    {
+    id: 'm026',
+    data: '2026-08-04',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: 'Zilean',
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 2, deaths: 11, assists: 14,
+    duracaoMinutos: 32,
+    cs: 29,
+    danoCausado: 28.927,
+    danoRecebido: 15.305,
+    participacaoAbates: 0.55,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 91,
+    lpDelta: -22,
+    nota: '10th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Lutador'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Nada mais nada menos do que um TILT',            // opcional
+  },
+    {
+    id: 'm027',
+    data: '2026-08-04',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Caitlyn',
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 6, deaths: 9, assists: 7,
+    duracaoMinutos: 32,
+    cs: 198,
+    danoCausado: 20.846,
+    danoRecebido: 24.750,
+    participacaoAbates: 0.25,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 69,
+    lpDelta: +19,
+    nota: '7th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Lutador'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Dia para esquecer, performances ruins',            // opcional
+  },
 ];
