@@ -23,4 +23,11 @@ export const milestones: JourneyMilestone[] = [
     descricao: 'Saí do Esmeralda IV 0 PDL até o Esmeralda III 61 PDL.',
     tipo: 'sequencia_vitorias',
   },
+  {
+    id: 't4',
+    data: '2026-08-04',
+    titulo: 'Vitória Custosa',
+    descricao: '5 vitórias, 3 derrotas - saldo positivo no papel, mas o nível de jogo incomodou mais do que o resultado.',
+    tipo: 'vitoria_custosa',
+  },
 ];

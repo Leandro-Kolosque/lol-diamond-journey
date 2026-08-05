@@ -1,5 +1,5 @@
 import type { JourneyMilestone } from '../types/match';
-import { Flag, Award, TrendingDown, TrendingUp, RollerCoaster, Target, Star } from 'lucide-react';
+import { Flag, Award, TrendingUp, TrendingDown, RollerCoaster, Annoyed, Scale, Target, Star } from 'lucide-react';
 
 
 interface Props {
@@ -12,6 +12,8 @@ const icons = {
   sequencia_vitorias: TrendingUp,
   sequencia_derrotas: TrendingDown,
   montanha_russa: RollerCoaster,
+  vitoria_custosa: Annoyed,
+  equilibrio: Scale,
   objetivo: Target,
   marco: Star,
 };
@@ -31,8 +33,8 @@ export default function Timeline({ milestones }: Props) {
         <p className="text-sm text-ink-500 dark:text-mist-400 mt-1">principais marcos do desafio</p>
       </div>
 
-      <div className="relative pl-8">
-        <div className="absolute left-[9px] top-2 bottom-2 w-px bg-mist-300 dark:bg-ink-800" />
+      <div className="relative pl-10">
+        <div className="absolute left-[15px] top-2 bottom-2 w-px bg-mist-300 dark:bg-ink-800" />
 
         <div className="space-y-9">
           {sorted.map((ms) => {
@@ -41,13 +43,13 @@ export default function Timeline({ milestones }: Props) {
             return (
               <div key={ms.id} className="relative">
                 <div
-                  className={`absolute -left-8 w-[19px] h-[19px] rounded-full flex items-center justify-center border-2 ${
+                  className={`absolute -left-10 w-8 h-8 rounded-full flex items-center justify-center border-2 ${
                     isGoal
                       ? 'bg-diamond/15 border-diamond text-diamond'
                       : 'bg-mist-100 dark:bg-ink-950 border-brand text-brand'
                   }`}
                 >
-                  <Icon size={10} strokeWidth={2.5} />
+                  <Icon size={16} strokeWidth={2.2} />
                 </div>
                 <p className="text-xs font-mono text-ink-500 dark:text-mist-400 mb-1">
                   {formatDate(ms.data)}
