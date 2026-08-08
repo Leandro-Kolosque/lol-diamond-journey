@@ -609,7 +609,7 @@ export const matches: Match[] = [
     observacoes: '',            // opcional
   },
     {
-    id: 'm030',
+    id: 'm031',
     data: '2026-08-07',
     resultado: 'derrota',       // 'vitoria' | 'derrota'
     campeao: 'Ashe',
@@ -629,7 +629,7 @@ export const matches: Match[] = [
     observacoes: '',            // opcional
   },
     {
-    id: 'm030',
+    id: 'm032',
     data: '2026-08-07',
     resultado: 'derrota',       // 'vitoria' | 'derrota'
     campeao: "Kai'Sa",
