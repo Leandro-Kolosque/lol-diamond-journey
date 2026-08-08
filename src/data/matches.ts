@@ -548,4 +548,104 @@ export const matches: Match[] = [
     tags: ['Lutador'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
     observacoes: 'Dia para esquecer, performances ruins',            // opcional
   },
+    {
+    id: 'm028',
+    data: '2026-08-05',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Zilean',
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 2, deaths: 2, assists: 17,
+    duracaoMinutos: 25,
+    cs: 38,
+    danoCausado: 12.102,
+    danoRecebido: 12.851,
+    participacaoAbates: 0.53,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 88,
+    lpDelta: +18,
+    nota: '4th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Atrasado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começando bem',            // opcional
+  },
+    {
+    id: 'm029',
+    data: '2026-08-05',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: 'Karma',
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 1, deaths: 5, assists: 23,
+    duracaoMinutos: 29,
+    cs: 28,
+    danoCausado: 8.810,
+    danoRecebido: 18.226,
+    participacaoAbates: 0.59,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 2,
+    lpAntes: 6,
+    lpDelta: +18,
+    nota: '3rd',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Vitorioso'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Ganhei QUATRO 4 hornas essa partida',            // opcional
+  },
+    {
+    id: 'm030',
+    data: '2026-08-07',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: 'Caitlyn',
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 4, deaths: 6, assists: 6,
+    duracaoMinutos: 32,
+    cs: 243,
+    danoCausado: 18.652,
+    danoRecebido: 19.772,
+    participacaoAbates: 0.38,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 2,
+    lpAntes: 24,
+    lpDelta: -22,
+    nota: '7th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Lutador'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: '',            // opcional
+  },
+    {
+    id: 'm030',
+    data: '2026-08-07',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: 'Ashe',
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 3, deaths: 6, assists: 4,
+    duracaoMinutos: 29,
+    cs: 243,
+    danoCausado: 13.818,
+    danoRecebido: 14.862,
+    participacaoAbates: 0.29,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 2,
+    lpAntes: 2,
+    lpDelta: -22,
+    nota: '8th',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Inflexível'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: '',            // opcional
+  },
+    {
+    id: 'm030',
+    data: '2026-08-07',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Kai'Sa",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 15, deaths: 7, assists: 10,
+    duracaoMinutos: 39,
+    cs: 260,
+    danoCausado: 45.386,
+    danoRecebido: 31.936,
+    participacaoAbates: 0.48,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 80,
+    lpDelta: -26,
+    nota: 'ACE',                   // opcional: 'S+', 'MVP', 'ACE'
+    tags: ['ACE', 'Azarado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Voltei para o Esmeralda III, sendo givado em todos os jogos',            // opcional
+  },
 ];

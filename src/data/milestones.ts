@@ -30,4 +30,18 @@ export const milestones: JourneyMilestone[] = [
     descricao: '5 vitórias, 3 derrotas - saldo positivo no papel, mas o nível de jogo incomodou mais do que o resultado.',
     tipo: 'vitoria_custosa',
   },
+  {
+    id: 't5',
+    data: '2026-08-05',
+    titulo: 'Esmeralda II finalmente',
+    descricao: 'Finalmente alcancei o Esmeralda II com uma partida que me rendeu nada mais nada menos do que 4 Honras',
+    tipo: 'marco',
+  },
+  {
+    id: 't6',
+    data: '2026-08-07',
+    titulo: 'Caí pro Esmeralda III novamente',
+    descricao: 'Acabei caindo para o Esmeralda III, apesar de jogar bem me senti bem givado',
+    tipo: 'sequencia_derrotas',
+  },
 ];
