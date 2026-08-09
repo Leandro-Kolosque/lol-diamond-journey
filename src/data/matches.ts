@@ -648,4 +648,24 @@ export const matches: Match[] = [
     tags: ['ACE', 'Azarado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
     observacoes: 'Voltei para o Esmeralda III, sendo givado em todos os jogos',            // opcional
   },
+    {
+    id: 'm033',
+    data: '2026-08-08',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Ziggs",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 7, deaths: 7, assists: 11,
+    duracaoMinutos: 32,
+    cs: 286,
+    danoCausado: 30.393,
+    danoRecebido: 25.438,
+    participacaoAbates: 0.51,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 54,
+    lpDelta: -23,
+    nota: 'ACE',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['ACE', 'Azarado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Perdi mais uma, QUE FASE RUIMMMM',            // opcional
+  },
 ];
