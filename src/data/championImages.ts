@@ -8,8 +8,11 @@ export const championImages: Record<string, string> = {
   // Jinx: 'https://exemplo.com/jinx.jpg',
   // Ezreal: '/champions/ezreal.jpg',
   Aphelios: '/champions/aphelios.jpg',
+  Ashe: '/champions/ashe.jpg',
   Caitlyn: '/champions/caitlyn.jpg',
   Draven: '/champions/draven.jpg',
+  "Kai'Sa": '/champions/kaisa.jpg',
+  Karma: '/champions/karma.jpg',
   Sivir: '/champions/sivir.jpg',
   Smolder: '/champions/smolder.jpg',
   Varus: '/champions/varus.jpg',
@@ -17,5 +20,6 @@ export const championImages: Record<string, string> = {
   Veigar: '/champions/veigar.jpg',
   Xayah: '/champions/xayah.jpg',
   Xerath: '/champions/xerath.jpg',
+  Ziggs: '/champions/ziggs.jpg',
   Zilean: '/champions/zilean.jpg',
 };
