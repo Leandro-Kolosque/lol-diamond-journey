@@ -668,4 +668,204 @@ export const matches: Match[] = [
     tags: ['ACE', 'Azarado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
     observacoes: 'Perdi mais uma, QUE FASE RUIMMMM',            // opcional
   },
+    {
+    id: 'm034',
+    data: '2026-08-10',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: "Zilean",
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 2, deaths: 4, assists: 13,
+    duracaoMinutos: 27,
+    cs: 28,
+    danoCausado: 11.140,
+    danoRecebido: 15.677,
+    participacaoAbates: 0.41,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 32,
+    lpDelta: +18,
+    nota: '3rd',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Médio'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm035',
+    data: '2026-08-11',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Zilean",
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 2, deaths: 4, assists: 13,
+    duracaoMinutos: 31,
+    cs: 50,
+    danoCausado: 11.638,
+    danoRecebido: 20.618,
+    participacaoAbates: 0.56,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 50,
+    lpDelta: -22,
+    nota: '5th',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Azarado'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm036',
+    data: '2026-08-11',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: "Zilean",
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 1, deaths: 3, assists: 19,
+    duracaoMinutos: 29,
+    cs: 29,
+    danoCausado: 8.843,
+    danoRecebido: 20.162,
+    participacaoAbates: 0.43,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 28,
+    lpDelta: +18,
+    nota: '2nd',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Resiliente'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm037',
+    data: '2026-08-11',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Zilean",
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 1, deaths: 11, assists: 17,
+    duracaoMinutos: 32,
+    cs: 41,
+    danoCausado: 17.986,
+    danoRecebido: 27.471,
+    participacaoAbates: 0.55,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 46,
+    lpDelta: -22,
+    nota: '9th',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Lutador'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm038',
+    data: '2026-08-12',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: "Caitlyn",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 1, deaths: 9, assists: 8,
+    duracaoMinutos: 28,
+    cs: 177,
+    danoCausado: 12.392,
+    danoRecebido: 18.945,
+    participacaoAbates: 0.23,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 24,
+    lpDelta: +18,
+    nota: '9th',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Lutador'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm039',
+    data: '2026-08-12',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Jhin",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 7, deaths: 8, assists: 16,
+    duracaoMinutos: 40,
+    cs: 300,
+    danoCausado: 45.636,
+    danoRecebido: 36.942,
+    participacaoAbates: 0.47,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 42,
+    lpDelta: -22,
+    nota: 'ACE',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['ACE', 'Montanha-Russa'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm040',
+    data: '2026-08-12',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: "Ziggs",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 4, deaths: 5, assists: 13,
+    duracaoMinutos: 34,
+    cs: 266,
+    danoCausado: 45.263,
+    danoRecebido: 21.517,
+    participacaoAbates: 0.35,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 20,
+    lpDelta: +18,
+    nota: '4th',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Resiliente'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm041',
+    data: '2026-08-13',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Caitlyn",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 6, deaths: 11, assists: 17,
+    duracaoMinutos: 32,
+    cs: 252,
+    danoCausado: 28.864,
+    danoRecebido: 22.921,
+    participacaoAbates: 0.30,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 38,
+    lpDelta: -22,
+    nota: '8th',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Lutador'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm042',
+    data: '2026-08-13',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: "Caitlyn",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 4, deaths: 7, assists: 3,
+    duracaoMinutos: 32,
+    cs: 267,
+    danoCausado: 14.792,
+    danoRecebido: 16.486,
+    participacaoAbates: 0.22,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 16,
+    lpDelta: +18,
+    nota: '8th',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Lutador', 'Resiliente', 'Double Kill'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Começou uma montanha Russa',            // opcional
+  },
+    {
+    id: 'm043',
+    data: '2026-08-13',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: "Karma",
+    lane: 'Suporte',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 5, deaths: 7, assists: 25,
+    duracaoMinutos: 35,
+    cs: 28,
+    danoCausado: 11.115,
+    danoRecebido: 23.230,
+    participacaoAbates: 0.54,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 34,
+    lpDelta: +35,
+    nota: 'MVP',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['MVP', 'Resiliente', 'Vitorioso'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Caí autofill ganhei o dobro de pontos',            // opcional
+  },
 ];
