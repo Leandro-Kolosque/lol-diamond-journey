@@ -868,4 +868,104 @@ export const matches: Match[] = [
     tags: ['MVP', 'Resiliente', 'Vitorioso'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
     observacoes: 'Caí autofill ganhei o dobro de pontos',            // opcional
   },
+    {
+    id: 'm044',
+    data: '2026-08-15',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Jhin",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 3, deaths: 6, assists: 7,
+    duracaoMinutos: 24,
+    cs: 186,
+    danoCausado: 15.164,
+    danoRecebido: 15.705,
+    participacaoAbates: 0.56,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 69,
+    lpDelta: -22,
+    nota: '8th',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Queda'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Meu duo ficou 0/8/0',            // opcional
+  },
+    {
+    id: 'm045',
+    data: '2026-08-15',
+    resultado: 'vitoria',       // 'vitoria' | 'derrota'
+    campeao: "Xayah",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 17, deaths: 3, assists: 5,
+    duracaoMinutos: 36,
+    cs: 320,
+    danoCausado: 57.279,
+    danoRecebido: 32.754,
+    participacaoAbates: 0.43,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 47,
+    lpDelta: +18,
+    nota: 'MVP',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['MVP', 'Double Kill', 'Imparável'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Carreguei',            // opcional
+  },
+    {
+    id: 'm046',
+    data: '2026-08-15',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Caitlyn",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 20, deaths: 9, assists: 11,
+    duracaoMinutos: 40,
+    cs: 310,
+    danoCausado: 74.486,
+    danoRecebido: 38.232,
+    participacaoAbates: 0.61,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 62,
+    lpDelta: -22,
+    nota: 'ACE',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['ACE', 'Double Kill', 'Imparável', 'Inocente'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Fui afundado, 70 mil de dano e ainda sim perdi, aqui o mental foi embora',            // opcional
+  },
+    {
+    id: 'm047',
+    data: '2026-08-15',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Aphelios",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 6, deaths: 6, assists: 14,
+    duracaoMinutos: 35,
+    cs: 228,
+    danoCausado: 30.285,
+    danoRecebido: 23.688,
+    participacaoAbates: 0.51,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 3,
+    lpAntes: 40,
+    lpDelta: -22,
+    nota: 'ACE',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['ACE', 'Azarado', 'Inocente'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Mais uma vez inocente, mid tenebroso',            // opcional
+  },
+    {
+    id: 'm048',
+    data: '2026-08-15',
+    resultado: 'derrota',       // 'vitoria' | 'derrota'
+    campeao: "Draven",
+    lane: 'Atirador',           // 'Topo' | 'Selva' | 'Meio' | 'Atirador' | 'Suporte'
+    kills: 8, deaths: 8, assists: 13,
+    duracaoMinutos: 35,
+    cs: 228,
+    danoCausado: 33.974,
+    danoRecebido: 21.558,
+    participacaoAbates: 0.47,      // 0 a 1
+    rank: 'Esmeralda',                   // 'Ferro' .. 'Desafiante'
+    divisao: 4,
+    lpAntes: 18,
+    lpDelta: +81,
+    nota: '3rd',                   //   opcional: 'S+', 'MVP', 'ACE'
+    tags: ['Médio', 'Double Kill'],                   // opcional: ['Double Kill', 'Imparável', 'Azarado'...]
+    observacoes: 'Voltei para o Esmeralda IV',            // opcional
+  },
 ];
