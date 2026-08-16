@@ -44,4 +44,26 @@ export const milestones: JourneyMilestone[] = [
     descricao: 'Acabei caindo para o Esmeralda III, apesar de jogar bem me senti bem givado',
     tipo: 'sequencia_derrotas',
   },
+    {
+    id: 't7',
+    data: '2026-08-13',
+    titulo: 'Montanha-russa',
+    descricao: '10 partidas em 4 dias alternando vitória e derrota quase sem parar fechei em 6V 4D, mas o PDL subiu e desceu o tempo inteiro.',
+    tipo: 'montanha_russa',
+  },
+    {
+    id: 't8',
+    data: '2026-08-15',
+    titulo: 'Derrota Honrosa',
+    descricao: '20/9/11 e 74 mil de dano causado e mesmo assim derrota. Jogo bom não foi garantia de vitória dessa vez.',
+    tipo: 'derrota_honrosa',
+  },
+    {
+    id: 't9',
+    data: '2026-08-16',
+    titulo: 'Caí pro Esmeralda IV novamente',
+    descricao: 'Acabei caindo para o Esmeralda IV.',
+    tipo: 'sequencia_derrotas',
+  },
+
 ];

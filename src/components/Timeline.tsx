@@ -1,5 +1,5 @@
 import type { JourneyMilestone } from '../types/match';
-import { Flag, Award, TrendingUp, TrendingDown, RollerCoaster, Annoyed, Scale, Target, Star } from 'lucide-react';
+import { Flag, Award, TrendingUp, TrendingDown, RollerCoaster, Annoyed, ShieldAlert, Scale, Target, Star } from 'lucide-react';
 
 
 interface Props {
@@ -13,6 +13,7 @@ const icons = {
   sequencia_derrotas: TrendingDown,
   montanha_russa: RollerCoaster,
   vitoria_custosa: Annoyed,
+  derrota_honrosa: ShieldAlert,
   equilibrio: Scale,
   objetivo: Target,
   marco: Star,

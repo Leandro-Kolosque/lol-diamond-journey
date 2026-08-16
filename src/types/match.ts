@@ -47,7 +47,7 @@ export interface JourneyMilestone {
   data: string;
   titulo: string;
   descricao: string;
-  tipo: 'inicio' | 'promocao' | 'sequencia_vitorias' | 'sequencia_derrotas' | 'montanha_russa' | 'vitoria_custosa' | 'equilibrio' | 'objetivo' | 'marco';
+  tipo: 'inicio' | 'promocao' | 'sequencia_vitorias' | 'sequencia_derrotas' | 'montanha_russa' | 'vitoria_custosa' | 'derrota_honrosa' | 'equilibrio' | 'objetivo' | 'marco';
 }
 
 export interface JourneyConfig {
